@@ -34,7 +34,7 @@ inputs:
     default: ""
 runs:
   using: node12
-  main: lib/main.js
+  main: lib/action/index.js
 branding:
   icon: bell
   color: blue
