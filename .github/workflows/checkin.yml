@@ -7,20 +7,23 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Cache node modules
+        id: cache-npm
         uses: actions/cache@v1
         with:
           path: node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.OS }}-npm-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.OS }}-build-${{ env.cache-name }}-
-            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-npm-${{ env.cache-name }}-
+            ${{ runner.OS }}-npm-
             ${{ runner.OS }}-
-      - run: npm install
+      - if: steps.cache-npm.outputs.cache-hit != 'true'
+        run: npm install
       - run: npm run build
       - name: check for uncommitted changes
         # Ensure no changes, but ignore node_modules dir since dev/fresh ci deps installed.
         run: |
           git diff --exit-code --stat -- . ':!node_modules' \
+          || (git diff -- . ':!node_modules') \
           || (echo "##[error] found changed files after build. please 'npm run build && npm run format'" \
                    "and check in all changes" \
               && exit 1)
