@@ -5,8 +5,7 @@
   "description": "You can notify Slack of the completion of GitHub Actions.",
   "main": "lib/main.js",
   "scripts": {
-    "build": "tsc",
-    "build-action": "ncc build lib/main.js --minify --out lib/action",
+    "build": "tsc && ncc build lib/main.js --minify --out lib/action",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "publish": "npm run build && npm prune --production"

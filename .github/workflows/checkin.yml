@@ -15,10 +15,10 @@ jobs:
           || (echo "##[error] found changed files after build. please 'npm run build && npm run format'" \
                    "and check in all changes" \
               && exit 1)
-      # - uses: indentinc/github-action-slack-notify@master
-      #   with:
-      #     status: ${{ job.status }}
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION_TOKEN }}
-      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-      #   if: always()
+      - uses: indentinc/github-action-slack-notify@master
+        with:
+          status: ${{ job.status }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
