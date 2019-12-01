@@ -1,11 +1,9 @@
-# Action Slack
+# gitbub-action-slack-notify
 
-<p align="left">
-  <a href="https://github.com/indentinc/action-slack"><img alt="GitHub Actions status" src="https://github.com/indentinc/action-slack/workflows/PR%20Checks/badge.svg"></a>
-  <a href="https://github.com/indentinc/action-slack"><img alt="GitHub Actions status" src="https://github.com/indentinc/action-slack/workflows/Slack%20Mainline/badge.svg"></a>
-</p>
+Notify Slack channels of updates from GitHub Actions
 
-You can notify slack of GitHub Actions.
+> Thank you to [@8398a7](https://github.com/8398a7) for [action-slack](https://github.com/8398a7/action-slack) as the starting point of this repo!
+
 
 ## Usage
 

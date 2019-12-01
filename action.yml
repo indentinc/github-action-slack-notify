@@ -1,5 +1,5 @@
 name: github-action-slack-notify
-description: You can notify Slack of GitHub Actions.
+description: Notify Slack channels of updates from GitHub Actions
 author: indentinc
 inputs:
   status:
