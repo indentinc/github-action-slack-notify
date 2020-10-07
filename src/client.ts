@@ -23,7 +23,7 @@ export class Client {
 
     if (props.status !== 'custom') {
       if (process.env.GITHUB_TOKEN === undefined) {
-        throw new Error('Specify secrets.GITHUB_ACTION_TOKEN')
+        throw new Error('Specify secrets.GITHUB_TOKEN')
       }
       this.github = new github.GitHub(process.env.GITHUB_TOKEN)
     }
@@ -94,7 +94,7 @@ export class Client {
 
   private async fields() {
     if (this.github === undefined) {
-      throw Error('Specify secrets.GITHUB_ACTION_TOKEN')
+      throw Error('Specify secrets.GITHUB_TOKEN')
     }
     const { sha } = github.context
     const { owner, repo } = github.context.repo

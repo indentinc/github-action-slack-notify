@@ -40,7 +40,7 @@ See here for `payload` reference or [Custom Notification](https://github.com/ind
     status: ${{ job.status }}
     author_name: Integration Test # default: indentinc@action-slack
   env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION_TOKEN }} # required
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # required
     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
   if: always() # Pick up events even if the job fails or is canceled.
 ```
@@ -53,7 +53,7 @@ When adding to text, write as follows.
     status: ${{ job.status }}
     text: overwrite text
   env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION_TOKEN }} # required
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # required
     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
 ```
 
@@ -75,7 +75,7 @@ The specified `secrets.SLACK_WEBHOOK_URL` must be legacy.
     icon_emoji: ':octocat:'
     channel: '#integration-test'
   env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION_TOKEN }} # required
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # required
     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
 ```
 
@@ -119,7 +119,7 @@ The payload format can pass javascript object.
         }]
       }
   env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION_TOKEN }} # optional
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # optional
     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
 ```
 
@@ -136,6 +136,6 @@ It is assumed that the input is in csv format.
     status: ${{ job.status }}
     fields: repo,message,action,author
   env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION_TOKEN }} # required
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # required
     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
 ```
