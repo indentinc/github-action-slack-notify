@@ -13,28 +13,28 @@ jobs:
         with:
           status: success
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: Failed Check
         uses: indentinc/github-action-slack-notify@master
         with:
           status: failure
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: Cancelled Check
         uses: indentinc/github-action-slack-notify@master
         with:
           status: cancelled
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: Check
         uses: indentinc/github-action-slack-notify@master
         with:
           status: ${{ job.status }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: Custom Field Check
         uses: indentinc/github-action-slack-notify@master
@@ -69,5 +69,5 @@ jobs:
               }]
             }
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
